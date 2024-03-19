@@ -1,0 +1,7 @@
+.rasa
+actions
+dataFirst
+modls
+tests
+venv
+Vagrantfile
