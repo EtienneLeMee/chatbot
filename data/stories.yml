@@ -13,3 +13,13 @@ stories:
   - action: utter_validation_lieu_et_date_reservation
   - intent: affirmation
   - action: utter_aurevoir
+
+- story: reservation path
+  steps:
+  - intent: bonjour
+  - action: utter_bonjour
+  - intent: souhait_reservation_entiere
+  - action: utter_validation_lieu_et_date_reservation
+  - intent: affirmation
+  - action: utter_confirmation
+#  - action: utter_aurevoir

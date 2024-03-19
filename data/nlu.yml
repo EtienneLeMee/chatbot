@@ -56,6 +56,13 @@ nlu:
     - [Toulouse](ville)
     - à [Nice](ville)
 
+- intent: souhait_reservation_entiere
+  examples: |
+    - Je souhaites réserver une chambre à [Paris](ville) le [14/02/2025](date).
+    - Je voudrais dormir à [Marseille](ville) le [01/04/2024](date)
+    - Réserve une chambre d'hôtel le [06/07/2024](date) à [Nantes](ville)
+    - Une chambre à [Rennes](ville) le [14/09/2026](date)
+
 - intent: date_reservation
   examples: |
     - le [19/01/2002](date)

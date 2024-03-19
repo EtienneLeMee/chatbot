@@ -8,6 +8,7 @@ intents:
   - souhait_reservation
   - lieu_reservation
   - date_reservation
+  - souhait_reservation_entiere
 
 responses:
   utter_bonjour:
@@ -21,6 +22,9 @@ responses:
 
   utter_validation_lieu_et_date_reservation:
   - text: "Vous souhaites bien réserver un hôtel à {ville} le {date}?"
+
+  utter_confirmation:
+  - text: "Votre réservation a bien été prise en compte!"
 
   utter_aurevoir:
   - text: "Au revoir et à bientôt!"
