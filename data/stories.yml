@@ -1,37 +1,15 @@
 version: "3.1"
 
 stories:
-
-- story: happy path
+- story: bonjour path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-- story: weather path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: weather
-  - action: utter_weathernice
+  - intent: bonjour
+  - action: utter_bonjour
+  - intent: souhait_reservation
+  - action: utter_lieu_reservation
+  - intent: lieu_reservation
+  - action: utter_date_reservation
+  - intent: date_reservation
+  - action: utter_validation_lieu_et_date_reservation
+  - intent: affirmation
+  - action: utter_aurevoir

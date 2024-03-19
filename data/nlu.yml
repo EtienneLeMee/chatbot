@@ -1,104 +1,89 @@
 version: "3.1"
 
 nlu:
-- intent: greet
+- intent: bonjour
   examples: |
-    - hey
+    - salut
+    - bonjour
+    - bonsoir
     - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hey
+    - yo
+    - bien le bonjour
+    - salutation
 
-- intent: goodbye
+- intent: aurevoir
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
+    - au revoir
+    - bonne nuit
+    - à bientot
+    - à plus
     - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
 
-- intent: affirm
+- intent: affirmation
   examples: |
+    - oui
     - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - yep
+    - bien sûr
+    - ok
+    - c'est bon
 
-- intent: deny
+- intent: negation
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - non
+    - nan
+    - jamais
+    - je ne pense pas
+    - pas comme ça
+    - pas possible
+    - pas vraiment
 
-- intent: mood_great
+- intent: souhait_reservation
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - je souhaite réserver
+    - je veux faire une réservation
+    - j'aimerais faire un séjour
+    - réserver
+    - dormir quelque part
+    - voyager
 
-- intent: mood_unhappy
+- intent: lieu_reservation
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - [Paris](ville)
+    - je souhaites réserver à [Marseille](ville)
+    - à [Lyon](ville)
+    - [Toulouse](ville)
+    - à [Nice](ville)
 
-- intent: bot_challenge
+- intent: date_reservation
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - le [19/01/2002](date)
+    - le [03/02/2004](date)
+    - [31/12/2000](date)
 
-- intent: weather
+- lookup: ville
   examples: |
-    - what the weather like?
-    - is there sunshine?
-    - is it raining?
-    - are there cloud?
-    - sun
-    - cloud
-    - rain
-    - weather
-    - cold
-    
+    - Paris
+    - Marseille
+    - Lyon
+    - Toulouse
+    - Nice
+    - Montpellier
+    - Strasbourg
+    - Bordeaux
+    - Lille
+    - Rennes
+    - Toulon
+    -	Reims
+    -	Saint-Étienne
+    -	Le Havre
+    - Dijon
+    - Grenoble
+    - Angers
+    - Villeurbanne
+    - Saint-Denis
+
+- regex: date
+  examples: |
+    - /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})/i

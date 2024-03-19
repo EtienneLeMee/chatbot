@@ -7,6 +7,7 @@ intents:
   - negation
   - souhait_reservation
   - lieu_reservation
+  - date_reservation
 
 responses:
   utter_bonjour:
@@ -15,14 +16,18 @@ responses:
   utter_lieu_reservation:
   - text: "Où souhaitez-vous réserver ?"
 
-  utter_validation_lieu_reservation:
-  - text: "Vous souhaites bien réserver un hôtel à {ville} ?"
+  utter_date_reservation:
+  - text: "Quand souhaitez vous réserver ? (jj/MM/aaaa)"
+
+  utter_validation_lieu_et_date_reservation:
+  - text: "Vous souhaites bien réserver un hôtel à {ville} le {date}?"
 
   utter_aurevoir:
   - text: "Au revoir et à bientôt!"
 
 entities:
   - ville
+  - date
 
 slots:
   ville:
@@ -31,6 +36,12 @@ slots:
     mappings:
     - type: from_entity
       entity: ville
+  date:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: date
 
 
 
