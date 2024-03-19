@@ -1,0 +1,39 @@
+version: "3.1"
+
+intents:
+  - bonjour
+  - aurevoir
+  - affirmation
+  - negation
+  - souhait_reservation
+  - lieu_reservation
+
+responses:
+  utter_bonjour:
+  - text: "Bonjour! Que puis-je faire pour vous ?"
+
+  utter_lieu_reservation:
+  - text: "Où souhaitez-vous réserver ?"
+
+  utter_validation_lieu_reservation:
+  - text: "Vous souhaites bien réserver un hôtel à {ville} ?"
+
+  utter_aurevoir:
+  - text: "Au revoir et à bientôt!"
+
+entities:
+  - ville
+
+slots:
+  ville:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: ville
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
